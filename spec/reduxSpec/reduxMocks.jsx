@@ -13,9 +13,6 @@ export var changeVideo = sinon.spy(unspiedChangeVideo);
 export var handleVideoSearch = sinon.spy(unspiedHandleVideoSearch);
 export var changeVideoList = sinon.spy(unspiedChangeVideoList);
 
-
-
-
 export var mockReducer = sinon.spy(function(state = {lastAction: ''}, action) {
   switch (action.type) {
   case 'CHANGE_VIDEO':

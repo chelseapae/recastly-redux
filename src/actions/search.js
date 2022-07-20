@@ -11,13 +11,14 @@ var handleVideoSearch = (q) => {
   //dispatch change VideoList with videos passed in to change
 
   //this would update videolist
-  //
 
   var cb = function (videos) {
     store.dispatch(changeVideoList(videos));
   };
 
-  searchYouTube({key: YOUTUBE_API_KEY, query: q}, cb);
+  return () => {
+    searchYouTube({key: YOUTUBE_API_KEY, query: q}, cb);
+  };
 };
 
 export default handleVideoSearch;

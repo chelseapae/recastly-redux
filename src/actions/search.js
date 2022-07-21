@@ -13,10 +13,14 @@ var handleVideoSearch = (q) => {
   //this would update videolist
 
   var cb = function (videos) {
+    console.log('videos from API: ', videos);
+    //debugger;
+
     store.dispatch(changeVideoList(videos));
   };
 
   return () => {
+    console.log('running searchYouTube...');
     searchYouTube({key: YOUTUBE_API_KEY, query: q}, cb);
   };
 };

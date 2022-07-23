@@ -13,7 +13,6 @@ var handleVideoSearch = (q) => {
   //this would update videolist
 
   return (dispatch) => {
-    console.log('hey', q);
     var cb = function (videos) {
       console.log('videos', videos);
       dispatch(changeVideoList(videos));

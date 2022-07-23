@@ -8,7 +8,7 @@ var currentVideoReducer = (prevState = null, action) => {
   //   prevState = { videos: [], video: {} };
   // }
   //debugger;
-  if (action.type === 'CHANGE_VIDEO') {
+  if (action.type === 'CHANGE_VIDEO' && action.video !== undefined) {
     // return Object.assign({}, prevState, {currentVideo: action.video});
     return action.video;
   }

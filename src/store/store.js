@@ -7,6 +7,6 @@ import exampleVideoData from '../data/exampleVideoData.js';
 
 
 
-const store = createStore(rootReducer, { videoList: [], currentVideo: {} }, applyMiddleware(thunk));
+const store = createStore(rootReducer, { videoList: exampleVideoData, currentVideo: exampleVideoData[0] }, applyMiddleware(thunk));
 
 export default store;

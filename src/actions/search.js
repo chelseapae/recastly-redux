@@ -2,7 +2,7 @@ import searchYouTube from '../lib/searchYouTube.js';
 import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
-import store from '../store/store.js';
+// import store from '../store/store.js';
 
 var handleVideoSearch = (q) => {
 
@@ -12,15 +12,12 @@ var handleVideoSearch = (q) => {
 
   //this would update videolist
 
-  var cb = function (videos) {
-    console.log('videos from API: ', videos);
-    //debugger;
-
-    store.dispatch(changeVideoList(videos));
-  };
-
-  return () => {
-    console.log('running searchYouTube...');
+  return (dispatch) => {
+    console.log('hey', q);
+    var cb = function (videos) {
+      console.log('videos', videos);
+      dispatch(changeVideoList(videos));
+    };
     searchYouTube({key: YOUTUBE_API_KEY, query: q}, cb);
   };
 };
